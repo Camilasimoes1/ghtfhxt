@@ -7,22 +7,80 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-    body { background: #f8f7f7; }
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-    header { text-align: center; padding: 20px; background: #f8f7f7; }
-    .logo { max-height: 90px; width: auto; }
+    /* Header */
+    header {
+      text-align: center;
+      background: #f8f7f7;
+      padding: 20px;
+    }
+    .logo {
+      max-height: 90px;
+      width: auto;
+    }
 
-    .intro { display: flex; flex-wrap: wrap; padding: 40px 20px; gap: 20px; justify-content: center; align-items: center; }
-    .intro-left img { width: 100%; max-width: 480px; border-radius: 15px; height: auto; }
-    .intro-right { flex: 1; min-width: 280px; font-size: 18px; line-height: 1.6; margin-top: 10px; }
+    /* Intro */
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: #f8f7f7;
+    }
+    .intro-left, .intro-right {
+      flex: 1 1 300px;
+      margin: 10px;
+    }
+    .intro-left img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 15px;
+    }
+    .intro-right {
+      font-size: 18px;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-    .vitaminas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 20px; background: #f8f7f7; }
-    .card { display: flex; flex-wrap: wrap; background: #ccc; border-radius: 10px; color: #fff; overflow: hidden; align-items: flex-start; }
-    .card img { max-width: 150px; width: 100%; margin: 20px; border-radius: 10px; height: auto; }
-    .text { flex: 1; padding: 20px; }
-    .text h3 { font-size: 24px; margin-bottom: 10px; }
+    /* Vitaminas */
+    .vitaminas {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+      background: #f8f7f7;
+    }
+    .card {
+      display: flex;
+      background: #ccc;
+      border-radius: 10px;
+      color: #fff;
+      overflow: hidden;
+      flex-wrap: wrap;
+    }
+    .card img {
+      max-width: 150px;
+      width: 100%;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .text {
+      flex: 1 1 200px;
+      padding: 20px;
+    }
+    .text h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
 
+    /* Colores */
     .verde { background: #2e7d32; }
     .azul { background: #3949ab; }
     .verde-claro { background: #81c784; }
@@ -30,141 +88,227 @@
     .vermelho { background: #e53935; }
     .verde-escuro { background: #1b5e20; }
 
-    .formulario { background: linear-gradient(135deg, #1e88e5, #43a047, #8e24aa); padding: 60px 20px; display: flex; justify-content: center; }
-    .form-box { max-width: 500px; width: 100%; background: #f8f7f7; padding: 30px; border-radius: 15px; text-align: center; }
-    .form-logo { max-height: 90px; margin-bottom: 20px; width: auto; }
-    .form-box h2 { font-size: 18px; margin: 15px 0; font-weight: bold; }
-    form input, form button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; }
-    form button { background: #6a1b9a; color: #fff; cursor: pointer; border: none; }
-    form button:hover { background: #4a148c; }
-
-    footer { display: flex; flex-wrap: wrap; justify-content: space-between; background: #0d47a1; color: #fff; padding: 20px; gap: 20px; }
-    footer img { max-height: 80px; width: auto; }
-
-    @media (max-width: 768px) {
-      .intro { flex-direction: column; padding: 20px 10px; }
-      .intro-right { font-size: 16px; }
-      .text h3 { font-size: 20px; }
-      .vitaminas { grid-template-columns: 1fr; padding: 20px 10px; }
-      .form-box h2 { font-size: 16px; }
+    /* Formulário */
+    .formulario {
+      background: linear-gradient(135deg, #1e88e5, #43a047, #8e24aa);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
     }
-    @media (max-width: 480px) {
-      .intro-right { font-size: 14px; }
-      .text { padding: 15px; }
-      form input, form button { padding: 10px; }
+    .form-box {
+      max-width: 500px;
+      width: 100%;
+      background: #f8f7f7;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .form-logo {
+      max-height: 90px;
+      margin-bottom: 20px;
+    }
+    .form-box p, .form-box h2 {
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .form-box h2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    form button {
+      background: #6a1b9a;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+    form button:hover {
+      background: #4a148c;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: #0d47a1;
+      color: #fff;
+      padding: 20px;
+    }
+    footer div, footer img {
+      margin: 10px;
+    }
+
+    /* Responsivo */
+    @media (min-width: 768px) {
+      .vitaminas {
+        grid-template-columns: 1fr 1fr;
+      }
+      .card {
+        flex-direction: row;
+      }
+      .card img {
+        margin: 20px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .intro {
+        flex-direction: column;
+      }
+      .intro-left, .intro-right {
+        margin: 0 auto;
+      }
+      .text h3 {
+        font-size: 20px;
+      }
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card img {
+        margin: 10px auto;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/87bb6f3732eadf3ef7881914f4ab331a5cdd888c.png?raw=true" alt="Longvicel Logo" class="logo">
-</header>
+  <!-- Header -->
+  <header>
+    <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/87bb6f3732eadf3ef7881914f4ab331a5cdd888c.png?raw=true" alt="Longvicel Logo" class="logo">
+  </header>
 
-<section class="intro">
-  <div class="intro-left">
-    <img src="https://github.com/Camilasimoes1/longipet/blob/main/82210795f79a552cc9bc65b3b2b0e10316d11e86.jpg?raw=true" alt="Imagem cápsula">
-  </div>
-  <div class="intro-right">
-    <p>Desde quando nasci, que eu me lembre, minha família sempre estava doente... A partir desse dia me perguntei quanto tempo eu tinha mais de vida...</p>
-  </div>
-</section>
-
-<section class="vitaminas">
-  <div class="card verde">
-    <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Vitamina C">
-    <div class="text">
-      <h3>Vitamina C</h3>
-      <p>Frutas cítricas: Laranja, limão, kiwi, morango, acerola, goiabas, papaias.</p>
-      <p>Vegetais: Pimentões, brócolis, couves, espinafre, batatas, tomates.</p>
-      <p>Ervas frescas: Salsa, tomilho.</p>
+  <!-- Introdução -->
+  <section class="intro">
+    <div class="intro-left">
+      <img src="https://github.com/Camilasimoes1/longipet/blob/main/82210795f79a552cc9bc65b3b2b0e10316d11e86.jpg?raw=true" alt="Imagem cápsula">
     </div>
-  </div>
-
-  <div class="card azul">
-    <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Biotina">
-    <div class="text">
-      <h3>Biotina</h3>
-      <p>Alimentos de origem animal: fígado, gema de ovo, carne vermelha, frango, peixe, laticínios.</p>
-      <p>Alimentos de origem vegetal: nozes, sementes, grãos integrais, legumes, vegetais de folhas verdes, abacate.</p>
+    <div class="intro-right">
+      <p>
+        Desde quando nasci, que eu me lembre, minha família sempre estava doente, e assim fui passando ano após ano, até que meu pai morreu com problema de saúde. E logo após 2 anos morreu meu irmão, novo com muito tempo para viver, mas o câncer levou ele, hoje tenho 55 anos.
+        <br><br>
+        A partir desse dia me perguntei, quanto tempo eu tinha mais de vida? 
+        Fui pesquisar, em todos os recursos possíveis; atrás da verdade. Peguei fração de cura de todos os lugares, e descobri que era falta de nutrição para as células micro até o macro, foi assim a minha busca. E quero deixar um legado, antes de partir desse mundo.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <div class="card verde-claro">
+  <!-- Vitaminas -->
+  <section class="vitaminas">
+    <div class="card verde">
+      <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Vitamina C">
+      <div class="text">
+        <h3>Vitamina C</h3>
+        <p>Frutas Cítricas: Laranja, limão, kiwi, morango, acerola, goiabas, papaias.</p>
+        <p>Vegetais: Pimentões (vermelhos, amarelos e verdes), brócolis, couves (couve-de-bruxelas, couve-flor), espinafre, couve, batatas, tomates.</p> 
+        <p>Ervas Frescas: Salsa, tomilho.</p>
+      </div>
+    </div>
+
+    
+    <div class="card azul">
+      <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Biotina">
+      <div class="text">
+        <h3>Biotina</h3>
+        <p>Alimentos de Origem Animal: Fígado, gema de ovo, carne vermelha, frango, peixe, laticínios (leite, queijo, iogurte).</p>
+        <p>Alimentos de Origem Vegetal: Nozes (amêndoas, nozes, castanhas), sementes (girassol, linhaça, chia), grãos integrais, legumes (feijão, lentilha, grão-de-bico), vegetais de folhas verdes (espinafre, couve, alface), abacate.</p>
+      </div>
+    </div>
+
+   <div class="card verde-claro">
     <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Vitamina A">
     <div class="text">
       <h3>Vitamina A</h3>
-      <p>Fígado, óleo de fígado de peixe, laticínios e ovos.</p>
-      <p>Vegetais de cor laranja ou verde-escuro: cenoura, abóbora, batata doce, espinafre, brócolis.</p>
+      <p>Alimentos ricos em retinol: fígado, óleo de fígado de peixe, laticínios e ovos.</p>
+      <p>Fontes de provitamina A: betacaroteno em vegetais laranja ou verde-escuro, como cenoura, abóbora, batata doce, espinafre e brócolis.</p>
     </div>
   </div>
 
+  <!-- Astaxantina -->
   <div class="card marrom">
     <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Astaxantina">
     <div class="text">
       <h3>Astaxantina</h3>
-      <p>Microalgas, peixes como salmão e truta, camarões, caranguejos e suplementos.</p>
+      <p>Microalgas: Elas a produzem como um mecanismo de defesa contra condições ambientais adversas.</p>
+      <p>Organismos Marinhos: Peixes como salmão e truta, camarões, caranguejos e lagostas obtêm astaxantina de sua dieta.</p>
+      <p>Suplementos: Derivada da microalga Haematococcus pluvialis.</p>
     </div>
   </div>
 
+  <!-- Betacaroteno -->
   <div class="card vermelho">
     <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Betacaroteno">
     <div class="text">
       <h3>Betacaroteno</h3>
-      <p>Frutas e vegetais laranja e amarelos: cenoura, abóbora, batata-doce, manga, pêssego, mamão, damasco.</p>
-      <p>Vegetais de folhas verde-escuras: espinafre, couve, acelga, brócolis, couve de Bruxelas.</p>
-      <p>Outras fontes: pimentão vermelho, tomate, abóbora, ervilhas, abobrinha, melancia.</p>
+      <p>Frutas e Vegetais Laranja e Amarelos: Cenoura, abóbora, batata-doce, manga, pêssego, mamão, damasco.</p>
+      <p>Vegetais de Folhas Verde-Escuros: Espinafre, couve, acelga, brócolis, couve de Bruxelas.</p>
+      <p>Outras Fontes Vegetais: Pimentão vermelho, tomate, abóbora, ervilhas, abobrinha, melancia.</p>
     </div>
   </div>
 
+  <!-- Vitamina B2 -->
   <div class="card verde-escuro">
     <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura_de_tela_2025-09-04_170840-removebg-preview.png?raw=true" alt="Vitamina B2">
     <div class="text">
       <h3>Vitamina B2</h3>
-      <p>Alimentos de origem animal: fígado, carne de vaca, porco, aves, peixes, laticínios, ovos.</p>
-      <p>Alimentos de origem vegetal: vegetais de folhas verdes, grãos integrais, legumes, nozes, sementes, cogumelos, abacate.</p>
-      <p>Suplementos: forma de comprimidos ou cápsulas.</p>
+      <p>Alimentos de Origem Animal: Fígado, carne de vaca, carne de porco, aves (frango, peru), peixes (salmão, truta), laticínios (leite, queijo, iogurte, ovos).</p>
+      <p>Alimentos de Origem Vegetal: Vegetais de folhas verdes (espinafre, couve, brócolis), grãos integrais (arroz integral, aveia, cevada), legumes (feijão, lentilha, ervilha), nozes e sementes (amêndoas, girassol, sementes de gergelim), cogumelos, abacate.</p>
+      <p>Suplementos: A riboflavina também está disponível na forma de suplementos vitamínicos, geralmente na forma de comprimidos ou cápsulas.</p>
     </div>
   </div>
-</section>
+  </section>
 
-<section class="formulario">
-  <div class="form-box">
-    <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/87bb6f3732eadf3ef7881914f4ab331a5cdd888c.png?raw=true" alt="Longvicel Logo" class="form-logo">
-    <p>Cadastre-se e descubra tudo sobre o Longvicel, novidades, benefícios e produtos feitos para você!</p>
-    <h2>CADASTRE-SE AGORA E GARANTA SUA VAGA NA PALESTRA</h2>
-    <form id="cadastroForm">
-      <input type="text" id="nome" placeholder="Nome completo" required>
-      <input type="text" id="cpf" placeholder="CPF" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="text" id="estado" placeholder="Estado" required>
-      <button type="submit">ENTRAR</button>
-    </form>
-  </div>
-</section>
+  <!-- Formulário -->
+  <section class="formulario">
+    <div class="form-box">
+      <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/87bb6f3732eadf3ef7881914f4ab331a5cdd888c.png?raw=true" alt="Longvicel Logo" class="form-logo">
+      <p>Cadastre-se e descubra tudo sobre o Longvicel, novidades, benefícios e produtos feitos para você!</p>
+      <h2>CADASTRE-SE AGORA E GARANTA SUA VAGA NA PALESTRA</h2>
+      <form id="cadastroForm">
+        <input type="text" id="nome" placeholder="Nome completo" required>
+        <input type="text" id="cpf" placeholder="CPF" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="estado" placeholder="Estado" required>
+        <button type="submit">ENTRAR</button>
+      </form>
+    </div>
+  </section>
 
-<footer>
-  <div class="contato">
-    <p><strong>Contato</strong></p>
-    <p>Email</p>
-    <p>Telefone</p>
-  </div>
-  <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura%20de%20tela%202025-09-04%20191853.png
+  <!-- Footer -->
+  <footer>
+    <div class="contato">
+      <p><strong>Contato</strong></p>
+      <p>Email</p>
+      <p>Telefone</p>
+    </div>
+    <div class="afiliados"></div>
+    <img src="https://github.com/Camilasimoes1/lonvicelcadastro/blob/main/Captura%20de%20tela%202025-09-04%20191853.png?raw=true" alt="Longvicel Logo" class="form-logo">
+  </footer>
 
-    <script>
-  document.getElementById("cadastroForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+  <script>
+    document.getElementById("cadastroForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const cpf = document.getElementById("cpf").value;
+      const email = document.getElementById("email").value;
+      const estado = document.getElementById("estado").value;
 
-    const nome = document.getElementById("nome").value;
-    const cpf = document.getElementById("cpf").value;
-    const email = document.getElementById("email").value;
-    const estado = document.getElementById("estado").value;
+      alert(`Cadastro realizado com sucesso!\n\nNome: ${nome}\nCPF: ${cpf}\nEmail: ${email}\nEstado: ${estado}`);
+      this.reset();
+    });
+  </script>
 
-    alert(`Cadastro realizado com sucesso!\n\nNome: ${nome}\nCPF: ${cpf}\nEmail: ${email}\nEstado: ${estado}`);
-
-    this.reset();
-  });
-</script>
-</footer>
 </body>
 </html>
